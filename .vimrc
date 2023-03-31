@@ -25,15 +25,22 @@ cmap hbash 0put =\"#!/bin/bash\n# Description:\n# Author:\n# Date:\n# Version:\n
 cmap fuckingspace %s/ / /g
 cmap ooh %s/ / /g
 
-" AUTOMATION
-" Sh beginning
+" SHELL Files
 autocmd BufNewFile *.sh 0put =\"#!/bin/bash\<nl># Description:\<nl># Author:\<nl># Date:\<nl># Version:\<nl>\<nl>\"|$
-" Color file
-autocmd BufEnter *.yml colorscheme github
-autocmd BufEnter *.yml set cuc cul
-autocmd BufEnter *.yaml colorscheme github
-autocmd BufEnter *.yaml set cuc cul
-autocmd BufEnter *.json set cuc cul
+
+" YAML Files
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yaml set cuc cul
+autocmd FileType yaml let g:indentLine_char = '⦙'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+let g:ale_lint_on_text_changed = 'never'
+
+" JSON Files
+autocmd FileType json set cuc cul
+autocmd FileType json let g:indentLine_char = '|'
+let g:vim_json_conceal=0
 
 call plug#begin()
 Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
@@ -43,8 +50,9 @@ Plug 'darrikonn/vim-gofmt'
 Plug 'ayu-theme/ayu-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'rodjek/vim-puppet'
+Plug 'Yggdroot/indentLine'
+Plug 'dense-analysis/ale'
 call plug#end()
-
 
 " GITHUB THEME
 " let g:github_colors_soft = 1
