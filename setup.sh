@@ -56,6 +56,10 @@ vim_setup() {
 omz_setup() {
   check_pkg "zsh"
 
+  check_pkg "curl"
+
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
   if [[ -d "$HOME/.oh-my-zsh" ]]; then
     cp "./deedwark.zsh-theme" "$HOME/.oh-my-zsh/themes/deedwark.zsh-theme"
   fi
