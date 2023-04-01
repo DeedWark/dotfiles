@@ -75,3 +75,4 @@ main() {
   omz_setup
   yamllint_setup
 }
+main
