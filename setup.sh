@@ -4,6 +4,7 @@
 # Date:
 # Version:
 
+PACKAGES="tmux vim zsh yamllint"
 CURDATE=$(date '+%y%m%d%H%S')
 
 check_uid() {
@@ -13,9 +14,16 @@ check_uid() {
 }
 
 check_pkg() {
-  if which "$1" >/dev/null 2>&1; then
+  if ! which "$1" >/dev/null 2>&1; then
     echo "Package $1 not found, don't forget to install it"
+    exit 1
   fi
+}
+
+check_all_packages() {
+  for pkg in $PACKAGES; do
+    check_pkg "$pkg"
+  done
 }
 
 tmux_setup() {
@@ -70,6 +78,7 @@ yamllint_setup() {
 }
 
 main() {
+  check_packages
   tmux_setup
   vim_setup
   omz_setup
