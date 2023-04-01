@@ -3,5 +3,5 @@
 
 ## Oh My ZSH theme
 ```bash
-cp deedwark.zsh-theme ~/.oh_my-zsh/themes/
+cp deedwark.zsh-theme ~/.oh-my-zsh/themes/
 ```
