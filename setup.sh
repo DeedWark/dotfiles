@@ -69,3 +69,9 @@ yamllint_setup() {
   fi
 }
 
+main() {
+  tmux_setup
+  vim_setup
+  omz_setup
+  yamllint_setup
+}
