@@ -24,6 +24,10 @@ check_all_packages() {
   for pkg in $PACKAGES; do
     check_pkg "$pkg"
   done
+  if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
+    echo "Please install Oh My ZSH first!"
+    exit 1
+  fi
 }
 
 tmux_setup() {
