@@ -78,7 +78,7 @@ yamllint_setup() {
 }
 
 main() {
-  check_packages
+  check_all_packages
   tmux_setup
   vim_setup
   omz_setup
