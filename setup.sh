@@ -1,8 +1,8 @@
 #!/bin/bash
-# Description:
-# Author:
-# Date:
-# Version:
+# Description: Setup .dotfiles
+# Author: me
+# Date: now
+# Version: OK
 
 PACKAGES="tmux vim zsh yamllint curl"
 CURDATE=$(date '+%y%m%d%H%S')
@@ -54,8 +54,6 @@ vim_setup() {
 }
 
 omz_setup() {
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
   if [[ -d "$HOME/.oh-my-zsh" ]]; then
     cp "./deedwark.zsh-theme" "$HOME/.oh-my-zsh/themes/deedwark.zsh-theme"
   fi
