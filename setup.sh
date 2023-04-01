@@ -4,7 +4,7 @@
 # Date:
 # Version:
 
-PACKAGES="tmux vim zsh yamllint"
+PACKAGES="tmux vim zsh yamllint curl"
 CURDATE=$(date '+%y%m%d%H%S')
 
 check_uid() {
@@ -27,8 +27,6 @@ check_all_packages() {
 }
 
 tmux_setup() {
-  check_pkg "tmux"
-
   if [[ -f "$HOME/.tmux.conf" ]]; then
     mv "$HOME/.tmux.conf" "$HOME/.tmux.conf.old.$CURDATE"
   fi
@@ -37,8 +35,6 @@ tmux_setup() {
 }
 
 vim_setup() {
-  check_pkg "vim"
-
   if [[ -f "$HOME/.vimrc" ]]; then
     mv "$HOME/.vimrc" "$HOME/.vimrc.old.$CURDATE"
   fi
@@ -54,10 +50,6 @@ vim_setup() {
 }
 
 omz_setup() {
-  check_pkg "zsh"
-
-  check_pkg "curl"
-
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
   if [[ -d "$HOME/.oh-my-zsh" ]]; then
@@ -73,8 +65,6 @@ omz_setup() {
 }
 
 yamllint_setup() {
-  check_pkg "yamllint"
-
   if [[ -f "$HOME/.config/yamllint/config" ]]; then
     mv "$HOME/.config/yamllint/config" "$HOME/.config/yamllint/config.old.$CURDATE"
   fi
