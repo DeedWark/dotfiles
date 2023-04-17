@@ -63,7 +63,30 @@ alias github='\git config --global user.name "GithubUser" ; \git config --global
 alias gitlab='\git config --global user.name "GitlabUser" ; \git config --global user.email "###@###" ; \git'
 alias git='gitcheck'
 alias pullup='find . -maxdepth 1 -type d | while read -r dir; do if [[ -d "$dir/.git" ]]; then echo -e "\nGit dir: ${dir##*/}"; \git -C "$dir" pull; fi; done'
-alias pullupall='for hubdir in $(find ~/GitHub -maxdepth 1 -type d); do echo -e "\nGit\033[1;96Hub\033[0m dir: ${hubdir##*/}"; \git -C $hubdir pull; done; for labdir in $(find ~/GitLab -maxdepth 1 -type d); do echo -e "\nGit\033[1;33mLab\033[0m dir: ${labdir##*/}"; \git -C $labdir pull; done'
+alias pullup='
+find . -maxdepth 1 -type d |
+  while read -r dir; do
+    if [[ -d "$dir/.git" ]]; then
+      echo -e "\nGit dir: ${dir##*/}";
+      \git -C "$dir" pull;
+    fi;
+  done'
+alias pullupall='
+find ~/GitLab -maxdepth 1 -type d |
+  while read -r dir; do
+    if [[ -d "$dir/.git" ]]; then
+      echo -e "\nGit dir: ${dir##*/}";
+      \git -C "$dir" pull;
+    fi;
+  done ;
+find ~/GitHub -maxdepth 1 -type d |
+  while read -r dir; do
+    if [[ -d "$dir/.git" ]]; then
+      echo -e "\nGit dir: ${dir##*/}";
+      \git -C "$dir" pull;
+    fi;
+  done'
+
 alias gstat='git status'
 alias gstatus='git status'
 alias gdiff='git --no-pager diff'
