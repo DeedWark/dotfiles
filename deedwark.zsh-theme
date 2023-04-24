@@ -33,4 +33,4 @@ index=$(($RANDOM % $size))
 selected=${array[ $RANDOM % ${#array[@]} ]}
 [[ -z "${selected}" ]] && selected="🦊"
 
-PROMPT='%{$fg_bold[red]%}$([[ $? -ne 0 ]] && echo "✗ " || echo $selected)%{$reset_color%}%{$fg_bold[white]%}%1~%{$reset_color%}$(git_prompt_info)%{$fg_bold[yellow]%}❯%{$fg_bold[cyan]%}❯%{$fg_bold[red]%}❯%{$reset_color%} '
+PROMPT='%{$fg_bold[red]%}$([[ $? -ne 0 ]] && echo "❌" || echo $selected)%{$reset_color%}%{$fg_bold[white]%}%1~%{$reset_color%}$(git_prompt_info)%{$fg_bold[yellow]%}❯%{$fg_bold[cyan]%}❯%{$fg_bold[red]%}❯%{$reset_color%} '
