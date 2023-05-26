@@ -1,3 +1,6 @@
+"------------"
+"-- BASICS --"
+"------------"
 syntax on
 syntax enable
 set backspace=2
@@ -16,7 +19,9 @@ set termguicolors
 " Check No-Break Space (U+00A0 - 0xC2 0xA0 - <0xa0> - NBSP)
 match Error /\%xA0/
 
-" SHORTCUT
+"--------------"
+"-- SHORTCUT --"
+"--------------"
 " When you were not sudo and what you do is fucked up
 cmap w!! w !sudo tee % >/dev/null
 cmap teebag w !sudo tee % >/dev/null
@@ -26,8 +31,15 @@ cmap hbash 0put =\"#!/bin/bash\n# Description:\n# Author:\n# Date:\n# Version:\n
 cmap fuckingspace %s/ / /g
 cmap ooh %s/ / /g
 
+" BufNewFile    => Starting to edit a file that doesn't exist
+" BufWritePost  => After writing the whole buffer to a file 
+" FileWritePost => After writing part of a buffer to a file
+
 " SHELL Files
 autocmd BufNewFile *.sh 0put =\"#!/bin/bash\<nl># Description:\<nl># Author:\<nl># Date:\<nl># Version:\<nl>\<nl>\"|$
+
+" Golang Files
+autocmd BufWritePost,FileWritePost *.go silent! :GoFmt 
 
 " YAML Files
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -57,13 +69,14 @@ let g:ale_linters = {
       \ 'sh': ['shfmt'],
       \}
 
+"-------------"
+"-- PLUGINS --"
+"-------------"
 call plug#begin()
 " Auto indent Shell script
 Plug 'z0mbix/vim-shfmt', { 'for': 'sh' }
 " Color GitHub
 Plug 'cormacrelf/vim-colors-github'
-" Color Iceberg
-Plug 'cocopon/iceberg.vim'
 " Golang linter
 Plug 'darrikonn/vim-gofmt'
 " Color ayu
@@ -86,11 +99,11 @@ Plug 'tell-k/vim-autopep8'
 Plug 'dense-analysis/ale'
 call plug#end()
 
-" ------ "
-" THEMES "
-" ------ "
+"------------"
+"-- THEMES --"
+"------------"
 " GRUVBOX THEME
-colorscheme gruvbox
+colorscheme retrobox
 set background=dark
 
 " GITHUB THEME
