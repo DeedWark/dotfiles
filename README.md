@@ -1,5 +1,5 @@
 # .dotfiles
-- My useful .dotfiles to configure your make your Unix machine the real power
+- My useful .dotfiles to gives gooood sensatioooons 🎼🎶🎵
 
 ## Oh My ZSH theme
 ```bash
