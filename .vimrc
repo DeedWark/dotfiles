@@ -121,11 +121,18 @@ Plug 'tpope/vim-commentary'
 Plug 'Yggdroot/indentLine'
 " // THEMES / COLORS "
 Plug 'ayu-theme/ayu-vim'
+" Github color
 Plug 'cormacrelf/vim-colors-github'
+" Rusty color (mad max)
 Plug 'fcpg/vim-fahrenheit'
+" Blue and yellow
 Plug 'fcpg/vim-orbital'
+" Rusty color (mad max warmer)
 Plug 'fcpg/vim-farout'
+" Nice pop color
 Plug 'NLKNguyen/papercolor-theme'
+" Full black color (int in red)
+Plug 'andreasvc/vim-256noir'
 call plug#end()
 
 "------------"
