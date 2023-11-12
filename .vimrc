@@ -16,7 +16,7 @@ filetype indent on
 filetype plugin indent on
 set termguicolors
 " // Check No-Break Space (U+00A0 - 0xC2 0xA0 - <0xa0> - NBSP)
-match Error /\%xA0/
+match Error /\%xA0/ 
 
 "--------------"
 "-- SHORTCUT --"
@@ -83,7 +83,16 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
       \ 'c': ['clang-format'],
       \ 'cc': ['clang-format'],
+      \ 'cpp': ['clang-format'],
       \ 'sh': ['shfmt'],
+      \ 'ansible': ['ansible-lint'],
+      \ 'dockerfile': ['dockerfile_lint'],
+      \ 'elixir': ['credo'],
+      \ 'erlang': ['erlfmt'],
+      \ 'go' : ['gofmt'],
+      \ 'java': ['clang-format'],
+      \ 'kotlin': ['ktlint'],
+      \ 'puppet': ['puppet-lint'],
       \}
       "\ 'rust': ['analyzer','cargo'],
 "let g:ale_fixers = {
@@ -119,28 +128,32 @@ Plug 'tell-k/vim-autopep8'
 Plug 'tpope/vim-commentary'
 " // Indent line (beautiful)
 Plug 'Yggdroot/indentLine'
+" // Terraform linter
+Plug 'hashivim/vim-terraform'
 " // THEMES / COLORS "
+Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
-" Github color
 Plug 'cormacrelf/vim-colors-github'
-" Rusty color (mad max)
 Plug 'fcpg/vim-fahrenheit'
-" Blue and yellow
 Plug 'fcpg/vim-orbital'
-" Rusty color (mad max warmer)
 Plug 'fcpg/vim-farout'
-" Nice pop color
 Plug 'NLKNguyen/papercolor-theme'
-" Full black color (int in red)
-Plug 'andreasvc/vim-256noir'
+Plug 'tristen/superman'
+Plug 'haishanh/night-owl.vim'
+Plug 'lmarburger/vim-vividchalk'
+Plug 'adonaldson/vim-tictoc'
+Plug 'Rigellute/rigel'
+Plug 'jsit/toast.vim'
+Plug 'srcery-colors/srcery-vim'
 call plug#end()
 
 "------------"
 "-- THEMES --"
 "------------"
 " GRUVBOX THEME
-colorscheme retrobox
-set background=dark
+"colorscheme gruvbox
+"set background=dark
+"let g:gruvbox_contrast_dark = 'hard'
 
 " GITHUB THEME
 " let g:github_colors_soft = 1
@@ -149,16 +162,7 @@ set background=dark
 " colorscheme github
 
 " AYU THEME
-" let ayucolor="dark"
-" let background="black"
-" colorscheme ayu
+let ayucolor="dark"
+let background="black"
+colorscheme ayu
 
-"  JELLYBEANS THEME
-" colorscheme jellybeans
-" let g:jellybeans_overrides = {
-"       \ 'background': { 'guibg': '000000' },
-"       \}
-" let g:jellybeans_use_lowcolor_black = 1
-
-" TENDER THEME
-" colorscheme tender
