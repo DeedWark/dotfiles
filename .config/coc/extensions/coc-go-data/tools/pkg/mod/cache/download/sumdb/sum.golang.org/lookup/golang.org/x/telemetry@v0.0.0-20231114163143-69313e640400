@@ -3,7 +3,7 @@ golang.org/x/telemetry v0.0.0-20231114163143-69313e640400 h1:brbkEFfGwNGAEkykUOc
 golang.org/x/telemetry v0.0.0-20231114163143-69313e640400/go.mod h1:P6hMdmAcoG7FyATwqSr6R/U0n7yeXNP/QXeRlxb1szE=
 
 go.sum database tree
-21129266
-wUnVgacBzYUGkKj3ATTMBs2XiMAfnxHwAJMo8ejv5Vo=
+22387685
+rAwjtIeSCpHdDqQApZgxUSqpXH19uAuCKwgRnESmy3Q=
 
-— sum.golang.org Az3grrwBjfRDfjd5ai2YYPZl+hAN3WfXKpUxhPCCWxHRK/BguCDVZd0h2atQjH5cVhJVS5RINxyBzblJiqHwEbf8iAU=
+— sum.golang.org Az3grulHqMFde3Db2N3UzfQL05fyRwV3skPJqD7dtFFepFM1YSrquGnouVmkC2HgnaTgyVgRtvCc2jLyXr5o1HYhvQ4=
