@@ -18,7 +18,7 @@ set_omz() {
   curl -fsSL "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh" | sh -
   cp "deedwark.zsh-theme" "$HOME/.oh-my-zsh/themes/deedwark.zsh-theme"
 
-  echo -e "\n[\x1b[92m JUST RELOAD ZSH\x1b[0m]\n"
+  echo -e "\n[\x1b[1;92m JUST RELOAD ZSH \x1b[0m]\n"
 }
 
 set_vim() {
