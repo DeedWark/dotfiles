@@ -1,8 +1,8 @@
 #!/bin/bash
-# Description:
-# Author:
-# Date:
-# Version:
+# Description: Setup dotfiles
+# Author: DeedWark
+# Date: 2024-01
+# Version: 1.0.0
 
 check_pkg() {
   if ! which "$1" >/dev/null 2>&1; then
