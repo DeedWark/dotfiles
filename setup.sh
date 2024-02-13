@@ -33,6 +33,7 @@ set_vim() {
     echo "Old $HOME/.vimrc file saved as $HOME/.vimrc.BKP-$edate"
   fi
   cp ".vimrc" "$HOME/.vimrc"
+  cp -r ".vim_config" "$HOME/.vim_config"
   echo -e "\n[\x1b[1;92m JUST LAUNCH vim AND TYPE :PlugInstall \x1b[0m]\n"
 }
 

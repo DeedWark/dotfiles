@@ -1,5 +1,5 @@
 " INIT MULTIPLE CONFIGURATION FILES "
-for f in split(glob('~/.vim_kojonotoryukitawazakotomo/*.vim'), '\n')
+for f in split(glob('~/.vim_config/*.vim'), '\n')
   exe 'source' f
 endfor
 
