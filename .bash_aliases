@@ -62,7 +62,6 @@ alias ta='tmux a'
 alias github='\git config --global user.name "GithubUser" ; \git config --global user.email "###@###" ; \git'
 alias gitlab='\git config --global user.name "GitlabUser" ; \git config --global user.email "###@###" ; \git'
 alias git='gitcheck'
-alias pullup='find . -maxdepth 1 -type d | while read -r dir; do if [[ -d "$dir/.git" ]]; then echo -e "\nGit dir: ${dir##*/}"; \git -C "$dir" pull; fi; done'
 alias pullup='
 find . -maxdepth 1 -type d |
   while read -r dir; do
@@ -103,7 +102,7 @@ alias kubectl='microk8s.kubectl'
 alias man='man++'
 
 #REALCOUNT
-realcount() { < $1 grep -vE "(^#|^$|^\/)" |wc -l }
+alias realcount="grep -c -vE '(^#|^$|^\/)' <"
 
 #RANDOM
 alias random_token='tr -dc "a-zA-Z0-9" < /dev/urandom|fold -w 32|head -n1'
@@ -114,8 +113,8 @@ alias token='tr -dc "a-zA-Z0-9" < /dev/urandom|fold -w 32|head -n1'
 alias cdp='cd ${_%/*}'
 
 # Rust
-alias runrs="$(pwd)/target/debug/proj"
-alias rr="$(pwd)/target/debug/proj"
+alias runrs="\$(pwd)/target/debug/proj"
+alias rr="\$(pwd)/target/debug/proj"
 
 # Sec
 alias rustscan='podman run -ti --rm rustscan/rustscan:latest -b 10 -a'
