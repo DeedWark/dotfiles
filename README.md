@@ -1,6 +1,14 @@
 # .dotfiles
 - My useful .dotfiles to gives gooood sensatioooons 🎼🎶🎵
 
+#### Packages to install before
+- bash        (to execute this setup script)
+- git         (to clone git reposiory)
+- curl        (to download oh-my-zsh, vim plugins)
+- vim OR nvim (bests text editor)
+- tmux        (terminal multiplexer)
+- npm         (for vim/nvim plugins)
+
 ## Oh My ZSH theme
 ```bash
 cp deedwark.zsh-theme ~/.oh-my-zsh/themes/
