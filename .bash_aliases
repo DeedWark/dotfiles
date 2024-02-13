@@ -61,7 +61,7 @@ alias ta='tmux a'
 #GIT
 alias github='\git config --global user.name "GithubUser" ; \git config --global user.email "###@###" ; \git'
 alias gitlab='\git config --global user.name "GitlabUser" ; \git config --global user.email "###@###" ; \git'
-alias git='gitcheck'
+alias git='gitcheck || git'
 alias pullup='
 find . -maxdepth 1 -type d |
   while read -r dir; do
