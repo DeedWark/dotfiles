@@ -15,7 +15,12 @@ set_omz() {
   check_pkg "zsh"
   check_pkg "git"
   check_pkg "curl"
-  curl -fsSL "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh" | sh -
+  curl \
+    --fail \
+    --silent \
+    --show-error \
+    --location \
+    "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh" | sh -
   cp "deedwark.zsh-theme" "$HOME/.oh-my-zsh/themes/deedwark.zsh-theme"
 
   echo -e "\n[\x1b[1;92m JUST RELOAD ZSH \x1b[0m]\n"
@@ -25,8 +30,13 @@ set_vim() {
   check_pkg "vim"
   check_pkg "curl"
   check_pkg "npm"
-  curl -fLo "$HOME/.vim/autoload/plug.vim" \
-    --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  curl \
+    --silent \
+    --fail \
+    --location \
+    --output "$HOME/.vim/autoload/plug.vim" \
+    --create-dirs \
+    "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
   if [[ -f "$HOME/.vimrc" ]]; then
     edate=$(date +%s)
     mv "$HOME/.vimrc" "$HOME/.vimrc.BKP-$edate"
@@ -34,7 +44,11 @@ set_vim() {
   fi
   cp ".vimrc" "$HOME/.vimrc"
   cp -r ".vim_config" "$HOME/.vim_config"
-  echo -e "\n[\x1b[1;92m JUST LAUNCH vim AND TYPE :PlugInstall \x1b[0m]\n"
+
+  vim -c "PlugInstall" -c "q" -c "q"
+
+  echo -e "\n[\x1b[1;92m VIM CONFIGURATION DONE! \x1b[0m]"
+  echo -e "You can install coc plugins by using :CocInstall <plugin>\n"
 }
 
 set_nvim() {
@@ -49,7 +63,11 @@ set_nvim() {
     echo "Old $HOME/.config/nvim/init.vim file saved as $HOME/config/nvim/init.vim.BKP-$edate"
   fi
   cp ".config/nvim/init.vim" "$HOME/.config/nvim/init.vim"
-  echo -e "\n[\x1b[1;92m JUST LAUNCH nvim AND TYPE :PlugInstall \x1b[0m]\n"
+
+  nvim -c "PlugInstall" -c "q" -c "q"
+
+  echo -e "\n[\x1b[1;92m NEOVIM CONFIGURATION DONE! \x1b[0m]"
+  echo -e "You can install coc plugins by using :CocInstall <plugin>\n"
 }
 
 set_tmux() {
