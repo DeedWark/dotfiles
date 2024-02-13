@@ -61,7 +61,7 @@ set_tmux() {
   fi
   git clone "https://github.com/tmux-plugins/tpm" "$HOME/.tmux/plugins/tpm"
   cp ".tmux.conf" "$HOME/.tmux.conf"
-  echo -e "\n[x1b[1;92m JUST LAUNCH tmux AND TYPE Ctrl + b and I \x1b[0m]\n"
+  echo -e "\n[\x1b[1;92m JUST LAUNCH tmux AND TYPE Ctrl + b and I \x1b[0m]\n"
 }
 
 set_bash_alias() {
