@@ -24,6 +24,7 @@ set_omz() {
 set_vim() {
   check_pkg "vim"
   check_pkg "curl"
+  check_pkg "npm"
   curl -fLo "$HOME/.vim/autoload/plug.vim" \
     --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
   if [[ -f "$HOME/.vimrc" ]]; then
@@ -38,6 +39,7 @@ set_vim() {
 set_nvim() {
   check_pkg "nvim"
   check_pkg "curl"
+  check_pkg "npm"
   curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
     "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
   if [[ -f "$HOME/.config/nvim/init.vim" ]]; then
