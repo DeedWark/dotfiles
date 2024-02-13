@@ -4,6 +4,7 @@
 #### Packages to install before
 - bash        (to execute this setup script)
 - git         (to clone git reposiory)
+- zsh         (required by oh-my-zsh)
 - curl        (to download oh-my-zsh, vim plugins)
 - vim OR nvim (bests text editor)
 - tmux        (terminal multiplexer)
